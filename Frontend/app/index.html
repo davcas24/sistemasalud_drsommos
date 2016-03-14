@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endinject -->
+    <!--<script src = "/bootstrap/js/dropdown.js"></script>-->
+    <link rel="shortcut icon" type="image/icon" href="./assets/images/small.png"/>
+    <link href="./assets/css/font-awesome.css" rel="stylesheet">
+    <!--<link href="./assets/css/bootstrap.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick.css"/>
+    <link rel="stylesheet" href="./assets/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-progressbar-3.3.4.css"/>
+    <link id="switcher" href="./assets/css/theme-color/fountain-blue-theme.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
+    <link href='https:/fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https:/fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bootstrap-css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/sweetalert/dist/sweetalert.css">
+    <!-- endinject -->
+  </head>
+  <body ng-app="AngularScaffold">
+    <div ng-controller="navbarController">
+      <nav class="navbar navbar-default">
+        <div id="preloader">
+          <div id="status">&nbsp;</div>
+        </div>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+
+    <header id="header">
+<!-- header top search -->
+<div class="header-top">
+  <div class="container">
+    <form action="">
+      <div id="search">
+      <input type="text" placeholder="Type your search keyword here and hit Enter..." name="s" id="m_search" style="display: inline-block;">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    </form>
+  </div>
+</div>
+<!-- header bottom -->
+<div class="header-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="header-contact">
+          <ul>
+            <li>
+              <div class="phone">
+                <i class="fa fa-phone"></i>
+                Numero de Telefono
+              </div>
+            </li>
+            <li>
+              <div class="mail">
+                <i class="fa fa-envelope"></i>
+                Correo
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+<div id="menu-area">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- LOGO -->
+        <!-- TEXT BASED LOGO -->
+        <span style="cursor:pointer"><a class="navbar-brand" ng-click="goHome()"><img id = "mainlogo" alt = "Logo" src = "././assets/images/logo.jpg"/></a></span>
+        <!-- IMG BASED LOGO  -->
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+          <li><a href="FilterPage.html">Busca Un Doctor</a></li>
+          <li><a href="https:/www.nlm.nih.gov/medlineplus/spanish/" target="_blank">Novedades</a></li>
+          <li><a href="http:/www.consejosmedicos.com/"  target="_blank">Consejos Medicos</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="fa fa-angle-down"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <div class="contact-area-left">
+                <a ng-click = "goReg_doc()"><span style="cursor:pointer">Doctor</span></a>
+                <a ng-click = "goReg_pac()"><span style="cursor:pointer">Paciente</span></a>
+              </div>
+            </ul>
+          </li>
+          <li class="dropdown" ng-show = "!$sessionStorage.currentUser">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" > <span class="glyphicon glyphicon-user"></span>Iniciar Sesión <span class="fa fa-angle-down"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <div class="contact-area-left">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Correo" name = "Email" id="email" ng-model = "user.correo">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password" name = "Contrasena" id="contra" ng-model = "user.password">
+                </div>
+                <button type="button" class="btn btn-primary" id = "LOGIN" ng-click = "login(user)">Iniciar Sesión</button>
+                <!--<input type = "submit" value = "Iniciar Sesion" id="LOGIN">-->
+              </div>
+            </ul>
+          </li>
+          <li ng-show = "$sessionStorage.currentUser">
+            <a ng-click = "logout()"><span style="cursor:pointer">Cerrar Sesión</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div class="container">
+      <div ui-view></div>
+  </div>
+  </body>
+
+  <!-- bower:js -->
+
+  <script src="/jquery/dist/jquery.js"></script>
+
+  <script src="/angular/angular.js"></script>
+
+  <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script src="/bootstrap-css/js/bootstrap.min.js"></script>
+
+  <script src="/ngstorage/ngStorage.js"></script>
+
+  <script src="/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="/jQuery/dist/jquery.js"></script>
+
+  <script src="/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- endinject -->
+
+  <script src="app.js"></script>
+
+  <!-- inject:js -->
+  <script src="scripts/controllers/HomeController.js"></script>
+  <script src="scripts/controllers/navbarController.js"></script>
+  <script src="scripts/controllers/registerController.js"></script>
+  <script src="scripts/controllers/Reg_DoctorController.js"></script>
+  <script src="scripts/controllers/Reg_PacientController.js"></script>
+  <script src="scripts/services/authService.js"></script>
+  <!--endinject -->
+
+  <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+  <!--<script src="bootstrap/js/bootstrap.js"></script>-->
+  <script type="text/javascript" src="./assets/js/slick.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery.mixitup.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery.fancybox.pack.js"></script>
+  <script src="./assets/js/waypoints.js"></script>
+  <script src="./assets/js/jquery.counterup.js"></script>
+  <script type="text/javascript" src="./assets/js/wow.js"></script>
+  <script type="text/javascript" src="./assets/js/bootstrap-progressbar.js"></script>
+  <!--<script type="text/javascript" src="./assets/js/dropdown.js"></script>-->
+  <script type="text/javascript" src="./assets/js/custom.js"></script>
+
+</html>
