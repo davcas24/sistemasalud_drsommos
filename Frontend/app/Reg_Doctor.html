@@ -1,0 +1,92 @@
+<div ng-controller="Reg_DoctorController">
+  <title> Registrar Doctor </title>
+  <section id="contact">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           <div class="title-area">
+              <h2 class="title">Regístrate</h2>
+              <span class="line"></span>
+              <!--<p>Registrate para poder hacer una cita</p>-->
+            </div>
+         </div>
+         <div class="col-md-12">
+           <div class="cotact-area">
+             <div class="row">
+               <div class="col-md-4">
+                 <div class="contact-area-left">
+                   <h4>Informaci&#243n</h4>
+                   <p>Info que se ingresara</p>
+                    <ul>
+                      <li> Info</li>
+                      <li> Info</li>
+                    </ul>
+                 </div>
+               </div>
+               <div class="col-md-8">
+                 <div class="contact-area-right">
+                   <div class="btn-group" id="Esp_Dropdown">
+                      <button class="btn btn-default" data-label-placement>Especialidades</button>
+                      <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id = "checklist">
+                          <li><input type="checkbox" id="ID" name="NAME" value="Medicina Interna"><label for="ID">Medicina Interna</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Pediatría"><label for="ID">Pediatr&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Neumología"><label for="ID">Neumolog&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Oftalmología"><label for="ID">Oftalmolog&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Neurología"><label for="ID">Neurolog&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Traumatología"><label for="ID">Traumatolog&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Psiquiatría"><label for="ID">Psiquiatr&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Neurocirugía"><label for="ID">Neurocirug&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Otorrinolaringología"><label for="ID">Otorrinolaringolog&#205a</label></li>
+                          <li><input type="checkbox" id="ID" name="NAME" value="Cardiología"><label for="ID">Cardiolog&#205a</label></li>
+                          <!-- Other items -->
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Nombre" name = "Nombre" ng-model = "user.nombre" id = "texto">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Apellido" name = "Apellido" ng-model = "user.apellido" id = "texto1">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Número de Identidad" name = "Identidad" ng-model = "user.identidad" id = "texto2">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Número de Telefono" name = "Telefono" ng-model = "user.telefono" id = "texto3">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Correo" name = "Correo" ng-model = "user.correo" id = "texto4">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Contraseña" name = "Password" ng-model = "user.password" id = "texto5">
+                    </div>
+                    <button type="button" class="btn btn-primary" ng-click = "register()">Registrarse</button>
+                    <!--<input type = "submit" value = "Registrarse" >-->
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+  </section>
+  <!-- End contact section  -->
+
+  <!-- Start footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="footer-left">
+            <p><a href="index.html">Doctors Sommas</a></p>
+            <br><p> Mas info? </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+
+  <!--</body>-->
+</div>
